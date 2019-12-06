@@ -65,8 +65,7 @@ function checkLoginState() {               // Called when a person is finished w
             var page = pages[i];
             var li = document.createElement('li');
         }
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+      
     });
       }, {scope: 'manage_pages'});          
   }
