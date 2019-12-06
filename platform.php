@@ -1,15 +1,4 @@
-<h2>My platform</h2>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId            : '581731892589617',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v5.0'
-    });
-  };
-  
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <title>Facebook Login JavaScript Example</title>
@@ -72,7 +61,8 @@
 
 </script>
 
-
+<h2>My platform</h2>
+  
 //  The JS SDK Login Button 
 
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
