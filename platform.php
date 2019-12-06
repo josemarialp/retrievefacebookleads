@@ -51,20 +51,19 @@ function checkLoginState() {               // Called when a person is finished w
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
- function myFacebookLogin() {
-  FB.login(function(response) {
+
+    
+     function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+         console.log('Welcome!  Fetching your information.... ');
+          FB.login(function(response) {
     console.log('Successfully logged in', response);
-     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
-  // handle the response
-}, {scope: 'manage_pages'});
-  
+      }, {scope: 'manage_pages'});          
   }
-
 </script>
 
 <h2>My platform</h2>
