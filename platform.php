@@ -59,6 +59,12 @@ function checkLoginState() {               // Called when a person is finished w
     console.log('Successfully logged in', response);
     FB.api('/me/accounts', function(response) {
       console.log('Succesfully retrieved pages', response);
+        var pages = response.data;
+        var ul = document.getElementById('list');
+        for (var i = 0, len = pages.length; i < len; i++) {
+            var page = pages[i];
+            var li = document.createElement('li');
+        }
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
@@ -71,7 +77,7 @@ function checkLoginState() {               // Called when a person is finished w
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 
-<div id="status">
+    <ul id="list"></ul>
 </div>
 
 </body>
