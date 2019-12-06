@@ -16,10 +16,6 @@
     });
 
 
-    FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
-      statusChangeCallback(response);        // Returns the login status.
-    });
-  };
 
   
   (function(d, s, id) {                      // Load the SDK asynchronously
