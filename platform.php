@@ -8,16 +8,18 @@
       version          : 'v5.0'
     });
   };
-  FB.login(function(response) {
-    if (response.authResponse) {
-     console.log('Welcome!  Fetching your information.... ');
-     FB.api('/me', function(response) {
-       console.log('Good to see you, ' + response.name + '.');
-     });
-    } else {
-     console.log('User cancelled login or did not fully authorize.');
-    }
+  (function(d, s, id) {                      // Load the SDK asynchronously
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  
+  FB.login(function(response){
+  // handle the response 
 });
+  
 </script>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
-
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
