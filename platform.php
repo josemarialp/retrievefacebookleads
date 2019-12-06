@@ -57,8 +57,8 @@ function checkLoginState() {               // Called when a person is finished w
          console.log('Welcome!  Fetching your information.... ');
           FB.login(function(response) {
     console.log('Successfully logged in', response);
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
+    FB.api('/me/accounts', function(response) {
+      console.log('Succesfully retrieved pages', response);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
