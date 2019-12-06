@@ -9,8 +9,8 @@
     });
   };
 </script>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js">
-
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+<script>
 FB.login(function(response) {
     if (response.authResponse) {
      console.log('Welcome!  Fetching your information.... ');
