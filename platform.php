@@ -6,13 +6,23 @@
 </head>
 <body>
 <script>
-
+function checkLoginState() {               // Called when a person is finished with the Login Button.
+    FB.getLoginStatus(function(response) {   // See the onlogin handler
+      statusChangeCallback(response);
+    });
+  }
+  
+  
   window.fbAsyncInit = function() {
     FB.init({
       appId            : '581731892589617',
       autoLogAppEvents : true,
       xfbml            : true,
       version          : 'v5.0'
+    });
+  
+     FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+      statusChangeCallback(response);        // Returns the login status.
     });
   };
 
