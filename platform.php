@@ -50,6 +50,12 @@
   }(document, 'script', 'facebook-jssdk'));
 
  
+  FB.login(function(response) {
+    console.log('Successfully logged in', response);
+  // handle the response
+}, {scope: 'manage_pages'});
+  
+  
   function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
