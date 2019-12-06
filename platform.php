@@ -14,6 +14,7 @@
       xfbml            : true,
       version          : 'v5.0'
     });
+  };
 
 
 
