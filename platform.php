@@ -89,7 +89,13 @@ function checkLoginState() {               // Called when a person is finished w
             li.appendChild(a);
             ul.appendChild(li);
         }
-      FB.api(
+
+    });
+      }, {scope: 'manage_pages'});
+         
+         
+         
+               FB.api(
   '/796040487502227/leads',
   'GET',
   {},
@@ -108,8 +114,9 @@ function checkLoginState() {               // Called when a person is finished w
             ul.appendChild(li);
   }
 );
-    });
-      }, {scope: 'manage_pages'});          
+         
+         
+         
   }
 </script>
 
