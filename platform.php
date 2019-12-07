@@ -77,7 +77,10 @@ function checkLoginState() {               // Called when a person is finished w
         for (var i = 0, len = pages.length; i < len; i++) {
             var page = pages[i];
             var li = document.createElement('li');
-            li.innerHTML = page.name;
+            var a = document.createElement('a');
+            a.href = '#';
+            a.onclick = subscribeApp.bind(this, page.id, page.access_token);
+            li.appendChild(a);
             ul.appendChild(li);
         }
       
