@@ -56,7 +56,7 @@ function checkLoginState() {               // Called when a person is finished w
         FB.api(
             '/' + page_id + '/subscribed_apps',
             'post',
-            {access_token: page_access_token}
+            {access_token: page_access_token},
             function(response) {
             console.log('Successfully subscribed page', response);
         });
