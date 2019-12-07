@@ -64,6 +64,8 @@ function checkLoginState() {               // Called when a person is finished w
         for (var i = 0, len = pages.length; i < len; i++) {
             var page = pages[i];
             var li = document.createElement('li');
+            li.innerHTML = page.name;
+            ul.appendChild(li);
         }
       
     });
