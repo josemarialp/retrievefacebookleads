@@ -51,6 +51,19 @@ function checkLoginState() {               // Called when a person is finished w
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
+    function subscribeApp(page_id, page_access_token){
+        console.log('Subscribing page to app! ' + page_id);
+        FB.api(
+            '/' + page_id + '/subscribed_apps',
+            'post',
+            {access_token: page_access_token}
+            function(response) {
+            console.log('Successfully subscribed page', response);
+        });
+    }
+    
+    
+    
 
     
      function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
