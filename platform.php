@@ -108,6 +108,7 @@ function checkLoginState() {               // Called when a person is finished w
             a.innerHTML = page.name;
             li.appendChild(a);
             ul.appendChild(li);
+        }
   });
          
          
