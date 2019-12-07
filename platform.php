@@ -99,7 +99,7 @@ function checkLoginState() {               // Called when a person is finished w
        console.log('Acceso formularios', response);
         var formularios = response.data;
         var ul = document.getElementById('list');
-        for (var i = 0, len = pages.length; i < len; i++) {
+        for (var i = 0, len = formularios.length; i < len; i++) {
             var page = formularios[i];
             var li = document.createElement('li');
             var a = document.createElement('a');
