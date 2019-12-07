@@ -4,7 +4,7 @@
 /////////////////////////////////////////////////////////////////////////
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
   // A token that Facebook will echo back to you as part of callback URL verification.
-  $VERIFY_TOKEN = 'YOUR_SECURE_VERIFY_TOKEN';
+  $VERIFY_TOKEN = 'abc123';
   // Extract a verify token we set in the webhook subscription and a challenge to echo back.
   $verify_token = $_GET['hub_verify_token'];
   $challenge = $_GET['hub_challenge'];
