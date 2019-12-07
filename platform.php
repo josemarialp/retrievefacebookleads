@@ -89,7 +89,25 @@ function checkLoginState() {               // Called when a person is finished w
             li.appendChild(a);
             ul.appendChild(li);
         }
-      
+      FB.api(
+  '/796040487502227/leads',
+  'GET',
+  {},
+  function(response) {
+       console.log('Acceso formularios', response);
+        var formularios = response.data;
+        var ul = document.getElementById('list');
+        for (var i = 0, len = pages.length; i < len; i++) {
+            var page = formularios[i];
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            a.href = "#";
+            a.onclick = subscribeApp.bind(this, page.id, page.access_token);
+            a.innerHTML = page.name;
+            li.appendChild(a);
+            ul.appendChild(li);
+  }
+);
     });
       }, {scope: 'manage_pages'});          
   }
