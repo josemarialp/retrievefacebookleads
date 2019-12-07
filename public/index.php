@@ -2,31 +2,19 @@
 /////////////////////////////////////////////////////////////////////////
 //           Part 1: Subscribe a leadgen endpoint to webhook           //
 /////////////////////////////////////////////////////////////////////////
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-  // A token that Facebook will echo back to you as part of callback URL verification.
-  $VERIFY_TOKEN = 'abc123';
-  // Extract a verify token we set in the webhook subscription and a challenge to echo back.
-  $verify_token = $_GET['hub_verify_token'];
-  $challenge = $_GET['hub_challenge'];
-
-  if (!$verify_token || !$challenge) {
-    echo 'Missing hub.verify_token and hub.challenge params';
-    exit();
-  }
-
-  if ($verify_token !== $VERIFY_TOKEN) {
-    echo 'Verify token does not match';
-    exit();
-  }
-  // We echo the received challenge back to Facebook to finish the verification process.
-  echo $challenge;
+$challenge = $_REQUEST['hub_challenge'];
+$verify_token = $_REQUEST['hub_verify_token'];
+if ($verify_token === 'abc123'){
+echo $challenge;
 }
+$input = json_decode(file_get_contents('php://input'), true);
+error_log(print_r($input, true));
 
 /////////////////////////////////////////////////////////////////////////
 //                  Part 2: Retrieving realtime leads                  //
 /////////////////////////////////////////////////////////////////////////
 // Graph API endpoint
-$GRAPH_API_VERSION = 'v2.12';
+$GRAPH_API_VERSION = 'v5.0';
 $GRAPH_API_ENDPOINT = 'https://graph.facebook.com/'.$GRAPH_API_VERSION;
 // Your system user access token file path.
 // Note: Your system user needs to be an admin of the subscribed page.
