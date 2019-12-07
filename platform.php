@@ -95,11 +95,7 @@ function checkLoginState() {               // Called when a person is finished w
          
          
          
-               FB.api(
-  '/796040487502227/leads',
-  'GET',
-  {},
-  function(response) {
+               FB.api('/796040487502227/leads', function(response) {
        console.log('Acceso formularios', response);
         var formularios = response.data;
         var ul = document.getElementById('list');
@@ -112,8 +108,7 @@ function checkLoginState() {               // Called when a person is finished w
             a.innerHTML = page.name;
             li.appendChild(a);
             ul.appendChild(li);
-  }
-);
+  });
          
          
          
