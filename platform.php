@@ -98,13 +98,13 @@ function checkLoginState() {               // Called when a person is finished w
                FB.api('/796040487502227/leads', function(response) {
        console.log('Acceso formularios', response);
         var formularios = response.data;
-        var ul = document.getElementById('list');
+        var ul = document.getElementById('leads');
         for (var i = 0, len = formularios.length; i < len; i++) {
-            var page = formularios[i];
+            var inscritos = formularios[i];
             var li = document.createElement('li');
             var a = document.createElement('a');
-            a.innerHTML = page.created_time;
-            a.innerHTML = page.questions;
+            a.innerHTML = inscritos.created_time;
+            a.innerHTML = inscritos.questions;
             li.appendChild(a);
             ul.appendChild(li);
         }
@@ -121,6 +121,7 @@ function checkLoginState() {               // Called when a person is finished w
 </fb:login-button>
 
     <ul id="list"></ul>
+    <ul id="leads"></ul>
 </div>
 
 </body>
