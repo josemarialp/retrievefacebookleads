@@ -53,7 +53,7 @@ function checkLoginState() {               // Called when a person is finished w
 
     function subscribeApp(page_id, page_access_token){
         console.log('Subscribing page to app! ' + page_id);
-        FB.api('/' + page_id + '/
+        FB.api('/' + page_id + '/'
     }
 );
     }
