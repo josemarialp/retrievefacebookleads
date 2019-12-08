@@ -84,7 +84,7 @@ function checkLoginState() {               // Called when a person is finished w
             var li = document.createElement('li');
             var a = document.createElement('a');
             
-            a.innerHTML = inscritos.id;
+            
              a.innerHTML = inscritos.field_data;
             li.appendChild(a);
             ul.appendChild(li);
