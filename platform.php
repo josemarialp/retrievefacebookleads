@@ -53,16 +53,7 @@ function checkLoginState() {               // Called when a person is finished w
 
     function subscribeApp(page_id, page_access_token){
         console.log('Subscribing page to app! ' + page_id);
-        FB.api(
-    "/{page-id}/subscribed_apps",
-    "POST",
-    {
-        "subscribed_fields": "leadgen"
-    },
-    function (response) {
-      if (response && !response.error) {
-        /* handle the result */
-      }
+        FB.api('/' + page_id + '/
     }
 );
     }
