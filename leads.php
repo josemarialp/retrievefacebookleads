@@ -88,7 +88,7 @@ function checkLoginState() {               // Called when a person is finished w
              a.innerHTML = inscritos.questions;
             a.innerHTML = inscritos.created_time;
             a.innerHTML = inscritos.full_name;
-             a.innerHTML = .$questions;
+            
             li.appendChild(a);
             ul.appendChild(li);
         }
