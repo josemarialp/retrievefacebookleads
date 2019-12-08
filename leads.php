@@ -83,7 +83,7 @@ function checkLoginState() {               // Called when a person is finished w
             var inscritos = formularios[i];
             var li = document.createElement('li');
             var a = document.createElement('a');
-            a.innerHTML = inscritos.created_time;
+            
             a.innerHTML = inscritos.questions;
             li.appendChild(a);
             ul.appendChild(li);
