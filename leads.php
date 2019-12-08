@@ -91,13 +91,7 @@ function checkLoginState() {               // Called when a person is finished w
 
     });
       }, {scope: 'manage_pages'});
-         
-         
-         
-               
-  });
-         
-         
+  
          
   }
 </script>
